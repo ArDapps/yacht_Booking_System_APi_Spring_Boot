@@ -44,10 +44,11 @@ public class OwnerServiceImplemenation implements IOwnerService {
         log.info("Fetch All Owners as List with Special Page Size ");
         return ownerRepository.findAll(Pageable.ofSize(pageSize)).toList();
     }
-
     @Override
-    public Owner getSpecialOwner(Long ownerId) {
+    public Owner getSpecificOwner(Long ownerId) {
         log.info("Get Specific Owner By Id:{} ",ownerId);
         return ownerRepository.findById(ownerId).get();
     }
+
+
 }
