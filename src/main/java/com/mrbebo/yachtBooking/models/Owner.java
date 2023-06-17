@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -22,8 +23,13 @@ public class Owner {
     private String email;
 
     /**
-     Will add JWt and Cryptograpghy the password with Hash
+     Will add JWT and Cryptography the password with Hash
      **/
     @NotNull()
     private String password;
+
+    // One owner can have many yachts
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
+    private List<Yacht> yachtList;
+
 }
