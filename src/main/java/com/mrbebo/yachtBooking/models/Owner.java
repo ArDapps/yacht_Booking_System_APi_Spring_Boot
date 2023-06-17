@@ -20,6 +20,10 @@ public class Owner {
     @Column(unique = true)
     @NotNull()
     private String email;
+
+    /**
+     Will add JWt and Cryptograpghy the password with Hash
+     **/
     @NotNull()
     private String password;
 }
