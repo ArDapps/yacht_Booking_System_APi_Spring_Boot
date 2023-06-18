@@ -1,5 +1,6 @@
-package com.mrbebo.yachtBooking.models;
+package com.mrbebo.yachtbooking.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,19 +14,20 @@ import java.util.List;
 @Table(name = "owners")
 @NoArgsConstructor
 @AllArgsConstructor
-public class Owner {
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long id;
+public class Owner  extends BaseEntity{
+
     private  String name;
+
+    /**
+     Will add JWT and Cryptography the password with Hash or User Class from Spring boot Security
+     **/
     @Column(unique = true)
     @NotNull()
     private String email;
 
-    /**
-     Will add JWT and Cryptography the password with Hash
-     **/
+
     @NotNull()
+    @JsonIgnore
     private String password;
 
     // One owner can have many yachts

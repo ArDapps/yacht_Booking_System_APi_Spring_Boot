@@ -1,4 +1,4 @@
-package com.mrbebo.yachtBooking;
+package com.mrbebo.yachtbooking;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,7 +10,7 @@ public class YachtBookingApplication {
 	{
 
 		SpringApplication.run(YachtBookingApplication.class, args);
-		System.out.println("welcome Yackt app");
+		System.out.println("welcome Yacht app");
 	}
 
 }

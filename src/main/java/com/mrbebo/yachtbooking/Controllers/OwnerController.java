@@ -1,8 +1,8 @@
-package com.mrbebo.yachtBooking.Controllers;
+package com.mrbebo.yachtbooking.Controllers;
 
-import com.mrbebo.yachtBooking.Services.Implementations.OwnerServiceImplemenation;
-import com.mrbebo.yachtBooking.models.Owner;
-import com.mrbebo.yachtBooking.models.Response;
+import com.mrbebo.yachtbooking.Services.Implementations.OwnerService;
+import com.mrbebo.yachtbooking.Entities.Owner;
+import com.mrbebo.yachtbooking.Utils.Response;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,12 +17,12 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class OwnerController {
 
-    private final OwnerServiceImplemenation ownerService;
+    private final OwnerService ownerService;
 
     @GetMapping("/list")
-    final ResponseEntity<Response> fetchAllOwners(){
+    final ResponseEntity<Response> fetchAllOwners(int limit){
         return  ResponseEntity.ok(Response.builder()
-                        .data(Map.of("owners",ownerService.getAllOwners(10)))
+                        .data(Map.of("owners",ownerService.getAllOwners(limit)))
                         .time(LocalDateTime.now())
                         .statusCode(HttpStatus.OK.value())
                         .status(HttpStatus.OK)

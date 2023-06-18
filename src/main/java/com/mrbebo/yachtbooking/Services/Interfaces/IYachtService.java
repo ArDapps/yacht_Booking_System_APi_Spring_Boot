@@ -1,6 +1,6 @@
-package com.mrbebo.yachtBooking.Services;
+package com.mrbebo.yachtbooking.Services.Interfaces;
 
-import com.mrbebo.yachtBooking.models.Yacht;
+import com.mrbebo.yachtbooking.Entities.Yacht;
 
 import java.util.Collection;
 
@@ -10,6 +10,6 @@ public interface IYachtService {
     Boolean delete (Long yachtId);
 
     Collection<Yacht> getAllYachts(int pageSize);
-    Yacht getSpecificYacht(Long ownerId);
+    Yacht getSpecificYacht(Long yachtId);
 
 }

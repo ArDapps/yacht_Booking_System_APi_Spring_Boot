@@ -1,7 +1,6 @@
-package com.mrbebo.yachtBooking.Services;
+package com.mrbebo.yachtbooking.Services.Interfaces;
 
-import com.mrbebo.yachtBooking.models.Owner;
-import com.mrbebo.yachtBooking.repositories.IOwnerRepository;
+import com.mrbebo.yachtbooking.Entities.Owner;
 
 import java.util.Collection;
 

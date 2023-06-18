@@ -1,4 +1,4 @@
-package com.mrbebo.yachtBooking.models;
+package com.mrbebo.yachtbooking.Entities;
 
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
@@ -12,10 +12,8 @@ import javax.persistence.*;
 @Table(name = "yacht")
 @NoArgsConstructor
 @AllArgsConstructor
-public class Yacht {
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long id;
+public class Yacht extends BaseEntity {
+
     @NotNull()
     private  String name;
     @NotNull()

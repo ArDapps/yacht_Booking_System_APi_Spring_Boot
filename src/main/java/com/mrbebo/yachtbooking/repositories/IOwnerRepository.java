@@ -1,6 +1,6 @@
-package com.mrbebo.yachtBooking.repositories;
+package com.mrbebo.yachtbooking.repositories;
 
-import com.mrbebo.yachtBooking.models.Owner;
+import com.mrbebo.yachtbooking.Entities.Owner;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface IOwnerRepository  extends JpaRepository<Owner,Long> {

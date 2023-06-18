@@ -10,3 +10,4 @@ yacht_Booking_System_APi_Spring_Boot
 => Swagger Documentation End Point : http://localhost:8080/swagger-ui/index.html
 
 # Simple Database Diagram 
+![YachtBookinkSimple.drawio.png](..%2F..%2F..%2F..%2FDownloads%2FYachtBookinkSimple.drawio.png)

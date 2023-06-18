@@ -1,8 +1,8 @@
-package com.mrbebo.yachtBooking.Services.Implementations;
+package com.mrbebo.yachtbooking.Services.Implementations;
 
-import com.mrbebo.yachtBooking.Services.IOwnerService;
-import com.mrbebo.yachtBooking.models.Owner;
-import com.mrbebo.yachtBooking.repositories.IOwnerRepository;
+import com.mrbebo.yachtbooking.Services.Interfaces.IOwnerService;
+import com.mrbebo.yachtbooking.Entities.Owner;
+import com.mrbebo.yachtbooking.repositories.IOwnerRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Pageable;
@@ -14,7 +14,7 @@ import java.util.Collection;
 @Service
 @Transactional
 @Slf4j
-public class OwnerServiceImplemenation implements IOwnerService {
+public class OwnerService implements IOwnerService {
     private  final IOwnerRepository ownerRepository;
 
 
@@ -22,6 +22,7 @@ public class OwnerServiceImplemenation implements IOwnerService {
     @Override
     public Owner create(Owner owner) {
         log.info("Creating Owner:{}",owner.getName());
+
         return ownerRepository.save(owner);
     }
 
@@ -29,6 +30,9 @@ public class OwnerServiceImplemenation implements IOwnerService {
     public Owner update(Owner owner) {
         log.info("Updating Owner with Id :{}",owner.getId());
 
+        /**
+         will use Spring boot Security to Encode owner.setPassword
+         **/
         return ownerRepository.save(owner);
     }
 
@@ -41,7 +45,7 @@ public class OwnerServiceImplemenation implements IOwnerService {
 
     @Override
     public Collection<Owner> getAllOwners(int pageSize) {
-        log.info("Fetch All Owners as List with Special Page Size ");
+        log.info("Fetch All Owners as List with  Number Special Page Size ");
         return ownerRepository.findAll(Pageable.ofSize(pageSize)).toList();
     }
     @Override

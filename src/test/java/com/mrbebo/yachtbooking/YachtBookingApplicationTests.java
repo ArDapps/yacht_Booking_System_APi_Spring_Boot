@@ -1,4 +1,4 @@
-package com.mrbebo.yachtBooking;
+package com.mrbebo.yachtbooking;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
