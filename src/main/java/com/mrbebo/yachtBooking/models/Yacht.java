@@ -23,7 +23,9 @@ public class Yacht {
     @NotNull()
     private String location;
     @NotNull()
-    private String pricePerDay;
+    private int pricePerDay;
+    @NotNull()
+    private  Boolean isRent ;
 
     // Many products can belong to one user
     @ManyToOne
