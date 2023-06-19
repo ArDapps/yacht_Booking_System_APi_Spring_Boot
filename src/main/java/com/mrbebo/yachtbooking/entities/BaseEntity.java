@@ -1,4 +1,4 @@
-package com.mrbebo.yachtbooking.Entities;
+package com.mrbebo.yachtbooking.entities;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,6 +8,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.time.ZonedDateTime;
+import java.util.UUID;
 
 @MappedSuperclass
 @NoArgsConstructor
@@ -17,12 +18,12 @@ import java.time.ZonedDateTime;
 public class BaseEntity {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    @Column(name = "ID",unique = true,nullable = false)
-    protected Long id;
+    @GeneratedValue(generator = "uuid")
+    @Column(name = "id",unique = true,nullable = false)
+    protected UUID id;
 
 
-    @Column(name = "CREATED_AT",unique = true,nullable = false)
+    @Column(name = "created_by",unique = true,nullable = false)
     @CreationTimestamp
     protected ZonedDateTime createdAt;
 

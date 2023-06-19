@@ -1,4 +1,4 @@
-package com.mrbebo.yachtbooking.Utils;
+package com.mrbebo.yachtbooking.utils;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;

@@ -1,9 +1,11 @@
 package com.mrbebo.yachtbooking.repositories;
 
-import com.mrbebo.yachtbooking.Entities.Owner;
+import com.mrbebo.yachtbooking.entities.Owner;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface IOwnerRepository  extends JpaRepository<Owner,Long> {
+import java.util.UUID;
+
+public interface IOwnerRepository  extends JpaRepository<Owner, UUID> {
     Owner findOwnerByEmail(String email);
 
 }

@@ -1,19 +1,20 @@
-package com.mrbebo.yachtbooking.Entities;
+package com.mrbebo.yachtbooking.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
+
 import java.util.List;
 
 @Entity
-@Data
-@Table(name = "owners")
+@Table(name = "owner")
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
+@ToString
 public class Owner  extends BaseEntity{
 
     private  String name;
@@ -25,13 +26,13 @@ public class Owner  extends BaseEntity{
     @NotNull()
     private String email;
 
+    @Column(unique = true)
 
     @NotNull()
-    @JsonIgnore
-    private String password;
+    private String phoneNumber;
 
-    // One owner can have many yachts
-    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
-    private List<Yacht> yachtList;
+//     One owner can have many yachts
+    @OneToMany( mappedBy = "owner",cascade = CascadeType.ALL)
+    private List<Yacht> yachts;
 
 }

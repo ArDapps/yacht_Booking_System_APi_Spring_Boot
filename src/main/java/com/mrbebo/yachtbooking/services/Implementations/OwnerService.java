@@ -1,7 +1,7 @@
-package com.mrbebo.yachtbooking.Services.Implementations;
+package com.mrbebo.yachtbooking.services.Implementations;
 
-import com.mrbebo.yachtbooking.Services.Interfaces.IOwnerService;
-import com.mrbebo.yachtbooking.Entities.Owner;
+import com.mrbebo.yachtbooking.services.Interfaces.IOwnerService;
+import com.mrbebo.yachtbooking.entities.Owner;
 import com.mrbebo.yachtbooking.repositories.IOwnerRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.Collection;
+import java.util.UUID;
+
 @RequiredArgsConstructor
 @Service
 @Transactional
@@ -37,7 +39,7 @@ public class OwnerService implements IOwnerService {
     }
 
     @Override
-    public Boolean delete(Long ownerId) {
+    public Boolean delete(UUID ownerId) {
         log.info("Deleting Owner by Id : {}",ownerId);
         ownerRepository.deleteById(ownerId);
         return true;
@@ -49,7 +51,7 @@ public class OwnerService implements IOwnerService {
         return ownerRepository.findAll(Pageable.ofSize(pageSize)).toList();
     }
     @Override
-    public Owner getSpecificOwner(Long ownerId) {
+    public Owner getSpecificOwner(UUID ownerId) {
         log.info("Get Specific Owner By Id:{} ",ownerId);
         return ownerRepository.findById(ownerId).get();
     }

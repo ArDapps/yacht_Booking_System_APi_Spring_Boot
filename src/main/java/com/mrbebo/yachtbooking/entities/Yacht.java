@@ -1,17 +1,18 @@
-package com.mrbebo.yachtbooking.Entities;
+package com.mrbebo.yachtbooking.entities;
 
 import com.sun.istack.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
-@Data
-@Table(name = "yacht")
+
+@Table(name = "yachts")
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
+@ToString
 public class Yacht extends BaseEntity {
 
     @NotNull()
@@ -23,11 +24,11 @@ public class Yacht extends BaseEntity {
     @NotNull()
     private int pricePerDay;
     @NotNull()
-    private  Boolean isRent ;
+    private  Boolean isRent  ;
 
     // Many products can belong to one user
     @ManyToOne
-    @JoinColumn(name = "owners")
+    @JoinColumn(name = "owner_id",referencedColumnName = "id")
     private Owner owner;
 
 
