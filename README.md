@@ -10,7 +10,8 @@ yacht_Booking_System_APi_Spring_Boot
 => Swagger Documentation End Point  for docker image : http://localhost:8080/swagger-ui/index.html
 
 # Simple Database Diagram 
-![YachtBookinkSimple.drawio (1).png](..%2F..%2F..%2F..%2FDownloads%2FYachtBookinkSimple.drawio%20%281%29.png)
+![YachtBookinkSimple drawio (1)](https://github.com/ArDapps/yacht_Booking_System_APi_Spring_Boot/assets/91119772/6b417a4e-accb-4043-9607-4cd4b3fdd0b2)
+
 
 # to create new Docker image Run steps and be confirmed your docker is installed and run 
     
