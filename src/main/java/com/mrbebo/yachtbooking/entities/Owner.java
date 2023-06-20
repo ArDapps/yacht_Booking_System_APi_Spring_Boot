@@ -32,7 +32,7 @@ public class Owner  extends BaseEntity{
     private String phoneNumber;
 
 //     One owner can have many yachts
-    @OneToMany( mappedBy = "owner",cascade = CascadeType.ALL)
-    private List<Yacht> yachts;
+//    @OneToMany( mappedBy = "owner",cascade = CascadeType.ALL)
+//    private List<Yacht> yachts;
 
 }

@@ -41,6 +41,16 @@ public class YachtController {
                 .status(HttpStatus.OK)
                 .build());
     }
+
+    @GetMapping("/owner/{ownerId}")
+    final ResponseEntity<Response> fetchYachtsByOwnerId( @PathVariable("ownerId") UUID ownerId){
+        return  ResponseEntity.ok(Response.builder()
+                .data(Map.of("Owner Yachts",yachtService.getAllYachtsForSpecificOwner(ownerId)))
+                .time(LocalDateTime.now())
+                .statusCode(HttpStatus.OK.value())
+                .status(HttpStatus.OK)
+                .build());
+    }
     @PostMapping("/add")
     final ResponseEntity<Response> addYacht( @RequestBody @Validated Yacht yacht){
         return  ResponseEntity.ok(Response.builder()

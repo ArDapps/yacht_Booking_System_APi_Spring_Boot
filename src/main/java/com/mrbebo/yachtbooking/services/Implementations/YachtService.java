@@ -54,9 +54,11 @@ public class YachtService implements IYachtService {
     public List<Yacht> getAllYachtsForSpecificOwner(UUID ownerId) {
         log.info("Fetch all yachts for a specific owner");
 
-        List<Yacht> yachts = yachtRepository.findYachtsByOwner(ownerId);
-        return yachts;
+
+        return yachtRepository.findByOwnerId(ownerId);
     }
+
+
     @Override
     public Yacht getSpecificYacht(UUID yachtId) {
         log.info("Get Specific yacht By Id:{} ",yachtId);

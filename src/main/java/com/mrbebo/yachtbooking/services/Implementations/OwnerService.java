@@ -1,5 +1,6 @@
 package com.mrbebo.yachtbooking.services.Implementations;
 
+import com.mrbebo.yachtbooking.entities.Yacht;
 import com.mrbebo.yachtbooking.services.Interfaces.IOwnerService;
 import com.mrbebo.yachtbooking.entities.Owner;
 import com.mrbebo.yachtbooking.repositories.IOwnerRepository;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.Collection;
+import java.util.List;
 import java.util.UUID;
 
 @RequiredArgsConstructor
@@ -50,6 +52,9 @@ public class OwnerService implements IOwnerService {
         log.info("Fetch All Owners as List with  Number Special Page Size ");
         return ownerRepository.findAll(Pageable.ofSize(pageSize)).toList();
     }
+
+
+
     @Override
     public Owner getSpecificOwner(UUID ownerId) {
         log.info("Get Specific Owner By Id:{} ",ownerId);

@@ -7,6 +7,6 @@ import java.util.List;
 import java.util.UUID;
 
 public interface IYachtRepository extends JpaRepository<Yacht, UUID> {
-    List<Yacht> findYachtsByOwner(UUID ownerId);
+    List<Yacht> findByOwnerId(UUID ownerId);
 
 }

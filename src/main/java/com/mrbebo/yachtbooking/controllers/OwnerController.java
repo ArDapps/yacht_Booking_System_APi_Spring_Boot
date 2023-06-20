@@ -29,6 +29,8 @@ public class OwnerController {
                         .status(HttpStatus.OK)
                 .build());
     }
+
+
     @GetMapping("/{ownerId}")
     final ResponseEntity<Response> fetchSpecificOwner( @PathVariable("ownerId") UUID ownerId){
         return  ResponseEntity.ok(Response.builder()
