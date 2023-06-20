@@ -1,4 +1,4 @@
 package com.mrbebo.yachtbooking.dtos;
 
-public class dtots {
+public class dtos {
 }
