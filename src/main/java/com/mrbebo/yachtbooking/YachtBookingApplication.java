@@ -10,7 +10,7 @@ public class YachtBookingApplication {
 	{
 
 		SpringApplication.run(YachtBookingApplication.class, args);
-		System.out.println("welcome Yacht app");
+		System.out.println("welcome Yacht app /n ==> To Test Api With Swager http://localhost:8080/swagger-ui/index.html");
 	}
 
 }
